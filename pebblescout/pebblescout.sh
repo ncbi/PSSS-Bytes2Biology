@@ -38,5 +38,6 @@ MAX_SUBJECTS=100
 
 URL="https://pebblescout.ncbi.nlm.nih.gov/sra-cl-be/sra-cl-be.cgi?rettype=pebblescout&m=2&id-report=download&db=$DATABASE&g=$MASK_THRESH&c=$SCORE_CONSTANT&_r=$MAX_SUBJECTS"
 
-curl -X POST "$URL" -F "fasta_file=@$1"
+# The output of the curl command is then trimmed to remove the leading and trailing lines from the file.
+curl -s -X POST "$URL" -F "fasta_file=@$1" | tac | tail -n +7 | tac | tail -n +19
 
