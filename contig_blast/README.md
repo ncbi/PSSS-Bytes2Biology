@@ -16,6 +16,7 @@ Files present in the directory and notes on them:
 
 * run_virus.sh
   * Script to run BLAST (with ElasticBLAST) for viral queries.  Documents the BLAST parameters used.
+  * produced virus.tab.gz
 
 * run_bac.sh 
   * Script to run BLAST (with ElasticBLAST) for bacterial queries.  Documents the BLAST parameters used.
@@ -23,3 +24,9 @@ Files present in the directory and notes on them:
 * parse_bioit_tab.py
   * Python script to parse BLAST tabular output produced by BLAST (see run_virus.sh or run_bac.sh to see BLAST -output values)
   * Produced data in virus.csv and bacteria.csv
+  * INvoked with "parse_bioit_tab.py INPUT 95 0.9 0" to produce csv files.  CHange last arg to 1 for verbose output.
+
+* virus_tab.gz
+  * Results from BLAST search of viral CDS
+
+
